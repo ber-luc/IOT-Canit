@@ -1,0 +1,16 @@
+<aside class="sidebar">
+  <div id="leftside-navigation" class="nano">
+    <ul class="nano-content">
+      <li>
+        <a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+      </li>
+      <li class="sub-menu" (click)="toggle()">
+        <a><i class="fa fa-cogs"></i><span>Salles</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+        <ul [@fadeInOut]="menuItems.salleShow ? 'show' : 'hide'">
+          <li *ngFor="let item of menuItems.salles"><a href="ui-alerts-notifications.html">{{ item.title }}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</aside>

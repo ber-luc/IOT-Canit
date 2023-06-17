@@ -1,0 +1,14 @@
+.room {
+  margin-left: 240px;
+  height: 100vh;
+  &-title{
+    text-align: center;
+    padding-top: 1.8rem;
+    font-size: 4rem;
+    color: #E6C200;
+  }
+  .sieges{
+    display: flex;
+    justify-content: center;
+  }
+}

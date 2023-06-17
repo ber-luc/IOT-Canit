@@ -1,0 +1,14 @@
+<div class="room">
+  <div>
+    <h2 class="room-title">Salle 1</h2>
+  </div>
+  <div class="sieges">
+    <div class="sieges-line" *ngFor="let siegesColumn of sieges">
+      <div class="siege" *ngFor="let siege of siegesColumn">
+        <img *ngIf="siege === 0" src="../../assets/img/seat-good.svg" alt="">
+        <img *ngIf="siege === 1" src="../../assets/img/seat-danger.svg" alt="">
+        <img *ngIf="siege === 2" src="../../assets/img/seat-alert.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
