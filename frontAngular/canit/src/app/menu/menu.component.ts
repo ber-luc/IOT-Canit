@@ -31,15 +31,7 @@ export class MenuComponent implements OnInit {
             row: 10,
             column: 20,
           },
-      },
-      {
-        title: 'Salle 2',
-        Taille:
-          {
-            row: 10,
-            column: 20,
-          }
-      },
+      }
   ]
 };
 

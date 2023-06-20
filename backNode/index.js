@@ -22,7 +22,19 @@ function generateMatrix(rows, columns) {
     for (let i = 0; i < rows; i++) {
         const row = [];
         for (let j = 0; j < columns; j++) {
-            const decibelValue = Math.floor(Math.random() * 121);
+            let decibelValue = Math.floor(Math.random() * 121);
+            const rand = Math.random(); // Génère un nombre aléatoire entre 0 et 1
+            if (rand < 0.90) {
+                // 90% de chance de générer un nombre entre 0 et 50
+                decibelValue = Math.floor(Math.random() * 51);
+            } else if (rand < 0.98) {
+                // 8% de chance de générer un nombre entre 50 et 60
+                decibelValue = Math.floor(Math.random() * 11) + 50;
+            } else {
+                // 2% de chance de générer un nombre entre 60 et 120
+                decibelValue = Math.floor(Math.random() * 61) + 60;
+            }
+
             row.push(decibelValue);
             if (decibelValue > 110) {
                 io.emit('loudNoise', { row: i, column: j, value: decibelValue });
@@ -32,5 +44,6 @@ function generateMatrix(rows, columns) {
     }
     return matrix;
 }
+
 
 server.listen(3000, () => console.log('Server is running on port 3000'));
