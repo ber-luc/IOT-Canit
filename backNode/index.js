@@ -34,11 +34,7 @@ function generateMatrix(rows, columns) {
                 // 2% de chance de générer un nombre entre 60 et 120
                 decibelValue = Math.floor(Math.random() * 61) + 60;
             }
-
             row.push(decibelValue);
-            if (decibelValue > 110) {
-                io.emit('loudNoise', { row: i, column: j, value: decibelValue });
-            }
         }
         matrix.push(row);
     }
